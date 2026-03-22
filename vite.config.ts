@@ -10,17 +10,4 @@ export default defineConfig({
         babel({ presets: [reactCompilerPreset()] }),
         tailwindcss(),
     ],
-    server: {
-        proxy: {
-            "/api": {
-                target: "https://api.frontendexpert.io",
-                changeOrigin: true,
-                rewrite: (path) =>
-                    path.replace(
-                        /^\/api\/wordle-words/,
-                        "/api/fe/wordle-words",
-                    ),
-            },
-        },
-    },
 });
