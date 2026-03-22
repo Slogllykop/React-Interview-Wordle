@@ -9,7 +9,11 @@ function App() {
     else if (error) return <>{error.message}</>;
     return (
         <section className="grid min-h-dvh w-full place-items-center">
-            <div className="bg-neutral-700 bg-yellow-700 bg-green-700 sr-only"></div>
+            <div className="sr-only" aria-hidden="true">
+                <div className="bg-neutral-700" />
+                <div className="bg-yellow-700" />
+                <div className="bg-green-700" />
+            </div>
             <Game data={data} />
         </section>
     );
